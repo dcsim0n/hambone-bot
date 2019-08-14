@@ -19,6 +19,7 @@ def say_hello(**payload):
             thread_ts=thread_ts
         )
 
-slack_token = os.environ["SLACK_API_TOKEN"]
+slack_token = os.environ["SLACK_API_TOKEN"] # !!DONT PUT YOUR TOKEN HERE!! Set this in your .env file
 rtm_client = slack.RTMClient(token=slack_token)
 rtm_client.start()
+
