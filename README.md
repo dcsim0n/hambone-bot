@@ -6,7 +6,11 @@ Just your friendly neighborhood makerspace bot, under not so heavy development
 If you want to test the code at home, feel free to clone or fork. Even deploy in your own slack channel. But please be advised that you will need your own API KEY from Slack [https://api.slack.com/]
 
 ### Install Dependencies
-Using `pipenv` to track dependinces and virtual enviornment. Run `pipenv install` to automatically install all required packages
+Using `pipenv` to track dependinces and virtual enviornment. 
++ Run `pipenv install` to automatically install all required packages
++ Create a `.env` file in project directory.
++ Find your slack api token
++ `echo SLACK_API_TOKEN="<your token here>" > .env`
 
 ## Notes on Where to go from here
 __HTTP API__:
