@@ -22,7 +22,8 @@ rtm.on('message', ( e ) => {
 });
 rtm.on('connected', ( e ) => {
   console.log("connected and ready...");
-  client.channels.join({"name": "#general" })
+  //Joining channels not working for some reason
+  //client.channels.join({"name": "#general" })
 });
 rtm.start();
 
