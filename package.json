@@ -1,0 +1,20 @@
+{
+  "name": "hambone-bot",
+  "version": ".1",
+  "description": "Slack Bot for Roswell Firelabs",
+  "main": "app.js",
+  "repository": "https://github.com/dcsim0n/hambone-bot.git",
+  "author": "Dana Simmons <dsanalog@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.2"
+  },
+  "dependencies": {
+    "@slack/rtm-api": "^5.0.2",
+    "@slack/web-api": "^5.1.0",
+    "dotenv": "^8.1.0"
+  }
+}

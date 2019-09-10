@@ -1,4 +1,2 @@
-# Ignore these files
-
+node_modules
 .env
-.vscode
