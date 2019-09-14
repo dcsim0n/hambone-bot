@@ -21,7 +21,11 @@ client = new WebClient(api_token);
 
 
 function parseMsg( text ) { // Parse messages with @ mentions
-  return text.match(/<@(?<to>.*)> (?<msg>.*)$/);
+  if(text){
+    return  text.match(/<@(?<to>.*)> (?<msg>.*)$/);
+  }else{
+    return null
+  }
 }
 
 
