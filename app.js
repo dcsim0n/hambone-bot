@@ -8,6 +8,7 @@
 const { RTMClient } = require('@slack/rtm-api');
 const { IncomingWebhook } = require('@slack/webhook');
 const { WebClient } = require('@slack/web-api');
+const commands = require('./commands');
 
 //Load Enviornment variables
 require('dotenv').config();
@@ -37,13 +38,16 @@ rtm.on('message', ( e ) =>{
 
   if(parsedMsg && parsedMsg.groups.to === rtm.activeUserId){
     //They are talking to us, do something
+    if(Object.keys(commands).includes(parsedMsg.groups.msg)){
+      commands[parsedMsg]( rtm );
+    }
     console.log("Sending reply...");
     rtm.sendMessage(`I haven't learned that yet, ask @Dana KN4BEV about teaching me that`, e.channel );
   }
    
 });
 
-rtm.on('channel_joined', ( e  ) =>{
+rtm.on('channel_joined', ( e ) =>{
   
   rtm.sendMessage(`Hi I'm Hambone, I don't do much right now, but i'm happy to be here`,e.channel);
 
