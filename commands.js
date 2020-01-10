@@ -5,6 +5,7 @@
 
 const axios = require('axios');
 
+
 let weather_url = "http://weather.server.com";
 
 const commands = {
