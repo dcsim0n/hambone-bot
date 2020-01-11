@@ -12,7 +12,7 @@ const commands = {
   "/weather": function( client, ...args ) {
     // fetch data from weather api
     client.sendMessage("Ok, im checking the weather now...");
-    axios.get( weather_url )
+    return axios.get( weather_url )
     .then( resp => {
       client.sendMessage("Looks like the current conditions are:");
       // expecting a json response with these keys
