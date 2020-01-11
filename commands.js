@@ -17,7 +17,7 @@ const commands = {
       client.sendMessage("Looks like the current conditions are:", args[0].channel);
       // expecting a json response with these keys
       const { temperature, humidity, pressure, altitude } = resp.data; 
-      client.sendMessage('Temperature: ' + temperature + '*C , Humidity: ' + humidity + '%, Barometric pressure: ' + pressure, args[0].channel)
+      client.sendMessage('Temperature: ' + temperature + '*F , Humidity: ' + humidity + '%, Barometric pressure: ' + pressure, args[0].channel)
     })
     .catch ( error => {
       console.log("Problem fetching data from: " + weather_url );
