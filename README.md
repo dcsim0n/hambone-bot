@@ -10,7 +10,8 @@ Use `yarn` to install dependencies
 + Run `yarn install` to automatically install all required packages
 + Create a `.env` file in project directory.
 + Find your slack api token
-+ `echo SLACK_API_TOKEN="<your token here>" > .env`
++ `API_TOKEN="slack api token` > .env
++ `BOT_TOKEN="bot api token` > .env
 
 ## Notes on Where to go from here
 __HTTP API__:

@@ -38,11 +38,13 @@ rtm.on('message', ( e ) =>{
 
   if(parsedMsg && parsedMsg.groups.to === rtm.activeUserId){
     //They are talking to us, do something
-    if(Object.keys(commands).includes(parsedMsg.groups.msg)){
-      commands[parsedMsg]( rtm );
-    }
     console.log("Sending reply...");
-    rtm.sendMessage(`I haven't learned that yet, ask @Dana KN4BEV about teaching me that`, e.channel );
+    if(Object.keys(commands).includes(parsedMsg.groups.msg)){
+      commands[parsedMsg.groups.msg]( rtm, e );
+    }else{
+      rtm.sendMessage(`I haven't learned that yet, try the /help command or ask @Dana KN4BEV about teaching me that`, e.channel );
+
+    }
   }
    
 });
