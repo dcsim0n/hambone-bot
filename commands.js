@@ -28,7 +28,10 @@ const commands = {
 
   "/help": function( client, ...args ) {
     client.sendMessage("Looking for help? Here's a list of things I understand..", args[0].channel );
-    client.sendMessage("`/help` : prints this message\n`/weather` : get the current temperature and humidity of the shop\n", args[0].channel)
+    const helpMsg = `\`/help\` : prints this message
+\`/weather\` : get the current temperature and humidity of the shop
+for documentation and bug reports visit: https://github.com/dcsim0n/hambone-bot`
+    client.sendMessage(helpMsg, args[0].channel)
   }
 }
 module.exports = commands;

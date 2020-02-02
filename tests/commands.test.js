@@ -11,7 +11,7 @@ const commands = require('../commands');
 jest.mock('axios');
 
 //build mock for rtm client
-const rtmClientMock =  {sendMessage: jest.fn(text  => text) };
+const rtmClientMock =  {sendMessage: jest.fn(text => text) };
 
 describe('Test the /weather command', () => {
   beforeEach(( )=>{
@@ -23,17 +23,34 @@ describe('Test the /weather command', () => {
     rtmClientMock.sendMessage.mockClear();
   })
   test('calls send message on client', async () => {
-    await commands['/weather']( rtmClientMock );
-
+    await commands['/weather']( rtmClientMock, 'channel-id' ) 
     expect(rtmClientMock.sendMessage).toHaveBeenCalled();
   });
 
   test('retrieves data from api', async () =>{
-    await commands['/weather']( rtmClientMock );
+    await commands['/weather']( rtmClientMock , 'channel-id' );
     
     expect(rtmClientMock.sendMessage).toHaveBeenCalledTimes(3);
     expect(rtmClientMock.sendMessage.mock.results[1].value).toEqual("Looks like the current conditions are:");
     expect(rtmClientMock.sendMessage.mock.results[2].value).toContain("Temperature");
   })
 
+})
+describe('Test the /help command', ( ) => {
+
+  beforeEach(()=>{
+    rtmClientMock.sendMessage.mockClear();
+  });
+
+  test('/help sends a message to the user', async () =>{ 
+    await commands['/help'](rtmClientMock, 'channel-id')
+    
+    expect(rtmClientMock.sendMessage).toHaveBeenCalled();
+  });
+
+  test('the message should have a link to the hambone github', async ( ) =>{
+    await commands['/help'](rtmClientMock, 'channel-id');
+
+    expect(rtmClientMock.sendMessage.mock.results[1].value).toContain("https://github.com/dcsim0n/hambone-bot");
+  });
 })
