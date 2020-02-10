@@ -24,10 +24,15 @@ const client = new WebClient(api_token);
 function parseMsg( text ) { // Parse messages with @ mentions
   if(text){
     // We got some data, so parse it
-    const msgParts = text.match(/<@(?<to>.*)> (?<msg>.*)$/);
-    //build a new object with a 'to' and 'msg' key, 'msg' should be stripped for whitespace
-    const msg = { to: msgParts.groups.to, msg: msgParts.groups.msg.trim() } ;
-    return msg;
+    try{
+      const msgParts = text.match(/<@(?<to>.*)> (?<msg>.*)$/);
+      //build a new object with a 'to' and 'msg' key, 'msg' should be stripped for whitespace
+      const msg = { to: msgParts.groups.to, msg: msgParts.groups.msg.trim() } ;
+      return msg;
+    }catch{
+      return null
+    }
+
   }else{
     return null
   }
