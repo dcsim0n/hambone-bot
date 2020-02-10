@@ -4,7 +4,7 @@
 */
 
 const axios = require('axios');
-
+const { version } = require('./package.json');
 
 let weather_url = "http://192.168.5.134/i";
 
@@ -30,7 +30,8 @@ const commands = {
     client.sendMessage("Looking for help? Here's a list of things I understand..", args[0].channel );
     const helpMsg = `\`/help\` : prints this message
 \`/weather\` : get the current temperature and humidity of the shop
-for documentation and bug reports visit: https://github.com/dcsim0n/hambone-bot`
+for documentation and bug reports visit: https://github.com/dcsim0n/hambone-bot
+Hambone Slack Bot: ${ version }`
     client.sendMessage(helpMsg, args[0].channel)
   }
 }
