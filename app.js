@@ -1,8 +1,8 @@
-//
-//
-//Hambone Bot Javascript version
-//Dana Simmons and Compnay 2019
-//
+
+/*
+| Hambone Bot 
+| Dana Simmons and Compnay 2019
+*/
 
 
 const { RTMClient } = require('@slack/rtm-api');
