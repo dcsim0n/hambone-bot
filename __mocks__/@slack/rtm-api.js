@@ -11,6 +11,7 @@ class RTMClient {
     console.log("Using token:", token)
     this.activeUserId = 'me'; //must pass this as part of the even
   }
+  
   on( eventName, handler ){ 
     HANDLERS[eventName] = jest.fn(handler);
   }

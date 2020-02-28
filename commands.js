@@ -22,7 +22,7 @@ const commands = {
     .catch ( error => {
       console.log("Problem fetching data from: " + weather_url );
       console.log( error );
-      client.sendMessage("Oh, errm, I hit a snag:" + error, args[0]);
+      client.sendMessage("Oh, errm, I hit a snag:" + error, args[0].channel);
     })
   },
 
