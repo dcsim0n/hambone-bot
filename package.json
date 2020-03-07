@@ -1,6 +1,6 @@
 {
   "name": "hambone-bot",
-  "version": "1.5.2",
+  "version": "1.5.3",
   "description": "Slack Bot for Roswell Firelabs",
   "main": "app.js",
   "repository": "https://github.com/dcsim0n/hambone-bot.git",
